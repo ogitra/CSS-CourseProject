@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 2.79rem auto 2.18rem;
+  grid-template-areas:
+    'hd'
+    'main'
+    'ft';
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  grid-area: main;
+}
+
+@media (min-width: 40rem) {
+  body {
+    grid-template-rows: 3.15rem auto 2.18rem;
+  }
+}
+
+.main-header {
+  background-color: #2ddf5c;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 40rem) {
+  .main-header {
+    padding: 0.3rem 1rem;
+  }
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 2.3rem;
+}
+
+.main-nav {
+  display: none;
+}
+
+@media (min-width: 40rem) {
+  .toggle-button {
+    display: none;
+  }
+  .main-nav {
+    display: flex;
+  }
+
+  .main-nav__items {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .main-nav__item {
+    margin: 0 0.5rem;
+  }
+
+  .main-nav__item a {
+    color: #0e4f1f;
+    font-weight: bold;
+    padding: 0.18rem 0;
+  }
+
+  .main-nav__item a:hover,
+  .main-nav__item a:active {
+    color: white;
+    border-bottom: 3px solid white;
+  }
+
+  .main-nav__item--cta a {
+    color: white;
+    background-color: #ff1b68;
+    padding: 0.37rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .main-nav__item--cta a:hover,
+  .main-nav__item--cta a:active {
+    border: none;
+    color: #ff1b68;
+    background-color: white;
+  }
+}
+
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.13rem;
+  background: black;
+  display: block;
+  margin: 0.6rem 0;
+}
+
+/* FOOTER */
+
+.main-footer {
+  grid-area: ft;
+  background-color: black;
+}
+
+.main-footer ul {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-footer__item {
+  padding: 0.5rem 0.87rem;
+}
+
+.main-footer__item--link {
+  color: white;
+}
+
+.main-footer__item--link:hover {
+  color: #cccccc;
+}
+
+/*BACKDROP*/
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+/*Mobile Nav */
+
+.mobile-nav {
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-out;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 100vh;
+}
+
+.mobile-nav__items {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.mobile-nav__item {
+  margin: 1rem 0;
+}
+
+.mobile-nav__item a {
+  color: #0e4f1f;
+  font-weight: bold;
+  padding: 0.18rem 0;
+  font-size: 1.5rem;
+}
+
+.mobile-nav__item--cta a {
+  color: white;
+  background-color: #ff1b68;
+  padding: 0.37rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav__item--cta a:hover,
+.mobile-nav__item--cta:active {
+  border: none;
+  color: #ff1b68;
+  background-color: white;
+}
+
+.open {
+  display: block;
+}
+
+.openMobileNav {
+  transform: translateX(0);
+}
+
+/* Animations */
+
+@keyframes wiggle {
+  0% {
+    background-color: #ff1b68;
+    transform: rotateZ(3deg);
+  }
+  10% {
+    background-color: #ff1bff;
+  }
+  20% {
+    background-color: #ca1bff;
+  }
+  30% {
+    background-color: #911bff;
+    transform: rotateZ(-3deg);
+  }
+  40% {
+    background-color: #451bff;
+  }
+  50% {
+    background-color: #1b98ff;
+  }
+  60% {
+    background-color: #1bfff4;
+    transform: rotateZ(3deg);
+  }
+  70% {
+    background-color: #1bff54;
+  }
+  80% {
+    background-color: #89ff1b;
+  }
+  90% {
+    background-color: #fbff1b;
+    transform: rotateZ(-3deg);
+  }
+  100% {
+    background-color: #ff951b;
+  }
+}
